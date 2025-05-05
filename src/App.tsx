@@ -1,8 +1,11 @@
 import { GameProvider } from "@/context/GameContext";
 import Inventory from "@/components/Inventory";
 import QRCodeScanner from "@/components/QRCodeScanner";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 
 const GameContent = () => {
+  // Initialize local storage during component mount
+  useLocalStorage();
   return (
     <div className="max-w-3xl mx-auto p-5 font-sans">
       <header className="text-center mb-8">

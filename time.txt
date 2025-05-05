@@ -15,3 +15,6 @@
  - game context
  - inventory component
  - qr code scanner
+
+5 minutes : 
+ - local storage (auto save)
