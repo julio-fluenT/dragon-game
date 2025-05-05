@@ -21,3 +21,7 @@
 
 10 minutes : 
  - dragon hunt component
+
+8 minutes : 
+ - huntHistory
+

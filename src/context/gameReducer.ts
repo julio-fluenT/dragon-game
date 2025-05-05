@@ -8,6 +8,7 @@ export const initialState: GameState = {
   },
   playerItems: [],
   totalChance: 0,
+  huntHistory: [],
   availableItems: AVAILABLE_ITEMS,
 };
 
@@ -33,6 +34,7 @@ export const gameReducer = (
     case "HUNT_DRAGON": {
       return {
         ...state,
+        huntHistory: [...state.huntHistory, action.payload],
       };
     }
 

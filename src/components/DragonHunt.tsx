@@ -52,6 +52,27 @@ const DragonHunt = () => {
           >
             {isHunting ? "Chasse en cours..." : "Partir à la chasse"}
           </Button>
+          {state.huntHistory.length > 0 && (
+            <div className="mt-4">
+              <h3 className="text-sm font-medium mb-2">
+                Historique des chasses
+              </h3>
+              <div className="space-y-2">
+                {state.huntHistory.slice(0, 5).map((hunt, index) => (
+                  <div key={index} className="text-sm flex justify-between">
+                    <span>{new Date(hunt.timestamp).toLocaleTimeString()}</span>
+                    <span
+                      className={
+                        hunt.success ? "text-green-500" : "text-red-500"
+                      }
+                    >
+                      {hunt.success ? "Succès" : "Échec"}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </CardContent>
       </Card>
 

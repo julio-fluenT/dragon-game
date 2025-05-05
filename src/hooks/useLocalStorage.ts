@@ -18,6 +18,13 @@ export const useLocalStorage = () => {
             dispatch({ type: "ADD_ITEM", payload: item });
           });
         }
+
+        // Initialize hunt history
+        if (parsedState.huntHistory && parsedState.huntHistory.length > 0) {
+          parsedState.huntHistory.forEach((hunt) => {
+            dispatch({ type: "HUNT_DRAGON", payload: hunt });
+          });
+        }
       } catch (error) {
         console.error("Erreur lors du chargement des données:", error);
       }

@@ -25,6 +25,7 @@ export interface GameState {
   player: Player;
   playerItems: Item[];
   totalChance: number;
+  huntHistory: HuntResult[];
   availableItems: Record<string, Item>;
 }
 
