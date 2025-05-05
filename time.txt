@@ -10,3 +10,8 @@
 3 minutes :
  - folders structure 
  - mock data and types
+
+10 minutes : 
+ - game context
+ - inventory component
+ - qr code scanner
