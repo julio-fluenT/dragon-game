@@ -1,0 +1,9 @@
+5 minutes : config
+ - vite + shadcn + tailwindcss
+ - git init
+ -  pnpm dlx shadcn@latest add button
+    pnpm dlx shadcn@latest add card
+    pnpm dlx shadcn@latest add dialog
+    pnpm dlx shadcn@latest add progress
+    pnpm dlx shadcn@latest add input
+
