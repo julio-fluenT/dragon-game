@@ -30,9 +30,11 @@ export const gameReducer = (
       };
     }
 
-    //case "HUNT_DRAGON": {
-    //  return {};
-    //}
+    case "HUNT_DRAGON": {
+      return {
+        ...state,
+      };
+    }
 
     //case "RESET_GAME": {
     //  return {};

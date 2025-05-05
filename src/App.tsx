@@ -2,6 +2,7 @@ import { GameProvider } from "@/context/GameContext";
 import Inventory from "@/components/Inventory";
 import QRCodeScanner from "@/components/QRCodeScanner";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
+import DragonHunt from "@/components/DragonHunt";
 
 const GameContent = () => {
   // Initialize local storage during component mount
@@ -20,6 +21,7 @@ const GameContent = () => {
       <div className="space-y-6">
         <QRCodeScanner />
         <Inventory />
+        <DragonHunt />
       </div>
 
       <footer className="mt-10 text-center text-sm text-gray-500 border-t border-gray-200 pt-4">

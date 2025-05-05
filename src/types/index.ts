@@ -13,6 +13,13 @@ export interface Player {
   pseudo: string;
 }
 
+// Type for the hunt result
+export interface HuntResult {
+  timestamp: number;
+  success: boolean;
+  chancePercentage: number;
+  randomValue: number;
+}
 // Type for the game state
 export interface GameState {
   player: Player;
@@ -24,5 +31,5 @@ export interface GameState {
 // Type for the game action
 export type GameAction =
   | { type: "ADD_ITEM"; payload: Item }
-  | { type: "HUNT_DRAGON" }
+  | { type: "HUNT_DRAGON"; payload: HuntResult }
   | { type: "RESET_GAME" };

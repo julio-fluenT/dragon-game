@@ -1,11 +1,12 @@
 import { createContext, useContext, useReducer, ReactNode } from "react";
 import { gameReducer, initialState } from "./gameReducer";
-import { GameState, GameAction } from "@/types";
+import { GameState, GameAction, HuntResult } from "@/types";
 
 interface GameContextType {
   state: GameState;
   dispatch: React.Dispatch<GameAction>;
   addItem: (itemCode: string) => void;
+  huntDragon: () => HuntResult;
 }
 
 const GameContext = createContext<GameContextType | undefined>(undefined);
@@ -20,8 +21,23 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
+  const huntDragon = () => {
+    const randomValue = Math.random() * 100;
+    const success = randomValue <= state.totalChance;
+
+    const result: HuntResult = {
+      timestamp: Date.now(),
+      success,
+      chancePercentage: state.totalChance,
+      randomValue,
+    };
+
+    dispatch({ type: "HUNT_DRAGON", payload: result });
+    return result;
+  };
+
   return (
-    <GameContext.Provider value={{ state, dispatch, addItem }}>
+    <GameContext.Provider value={{ state, dispatch, addItem, huntDragon }}>
       {children}
     </GameContext.Provider>
   );
