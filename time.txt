@@ -1,4 +1,4 @@
-5 minutes : config
+5 minutes : config (reality 7 minutes)
  - vite + shadcn + tailwindcss
  - git init
  -  pnpm dlx shadcn@latest add button
@@ -7,3 +7,6 @@
     pnpm dlx shadcn@latest add progress
     pnpm dlx shadcn@latest add input
 
+3 minutes :
+ - folders structure 
+ - mock data and types
